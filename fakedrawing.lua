@@ -45,7 +45,7 @@ local Fonts = loadstring(game:HttpGet('https://github.com/ipufo1/modules/blob/ma
 
 local drawingFontsEnum = {
     [0] = Fonts.Append('TahomaXP', game:HttpGet('https://github.com/ipufo1/modules/blob/main/TahomaXP.txt?raw=true')),
-    [1] = Fonts.Append('ProggyCleanTT', game:HttpGet('https://github.com/ipufo1/modules/blob/main/ProggyClean.txt?raw=true')),
+    [1] = Fonts.Append('NotTahomaDickhead', game:HttpGet('https://github.com/ipufo1/modules/blob/main/ProggyClean.txt?raw=true')),
     [2] = Fonts.Append('ProggyTiny', game:HttpGet('https://github.com/ipufo1/modules/blob/main/ProggyTiny.txt?raw=true')),
     [3] = Fonts.Append('SmallestPixel7', game:HttpGet('https://github.com/ipufo1/modules/blob/main/SmallestPixel7.txt?raw=true')),
     [4] = Fonts.Append('Minecraftia', game:HttpGet('https://github.com/ipufo1/modules/blob/main/Minecraftia.txt?raw=true')),
