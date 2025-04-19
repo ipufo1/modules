@@ -9,6 +9,20 @@ if not isfolder(foldername.. '/fonts') then
     makefolder(foldername.. '/fonts');
 end;
 
+local _, ver = identifyexecutor();
+if not isfile(foldername.. '/version.txt') then
+    writefile(foldername.. '/version.txt', ver);
+end;
+
+if readfile(foldername.. '/version.txt') ~= ver then
+    delfolder(foldername.. '/fonts');
+    delfile(foldername.. '/version.txt'); writefile(foldername.. '/version.txt', ver);
+end;
+
+if not isfolder(foldername.. '/fonts') then
+    makefolder(foldername.. '/fonts');
+end;
+
 function Fonts.Append(Name, Data, ENCODED)
     local Path = foldername.. `/fonts/{Name}`;
 
