@@ -47,6 +47,10 @@ local Library = {
     ScreenGui = ScreenGui;
 };
 
+getgenv().Library = Library;
+getgenv().Toggles = Toggles;
+getgenv().Options = Options;
+
 local RainbowStep = 0
 local Hue = 0
 
