@@ -30,19 +30,21 @@ function Fonts.Append(Name, Data, ENCODED)
         writefile(`{Path}.ttf`, (ENCODED and base64.decode(Data) or Data));
     end;
 
-    if not isfile(`{Path}.json`) then
-        local FontData = HttpService:JSONEncode({
-            ['name'] = Name;
-            ['faces'] = {{
-                ['name'] = 'Regular';
-                ['style'] = 'normal';
-                ['weight'] = 400;
-                ['assetId'] = getcustomasset(`{Path}.ttf`);
-            }}
-        })
-
-        writefile(`{Path}.json`, FontData);
+    if isfile(`{Path}.json`) then
+        delfile(`{Path}.json`);
     end;
+
+    local FontData = HttpService:JSONEncode({
+        ['name'] = Name;
+        ['faces'] = {{
+            ['name'] = 'Regular';
+            ['style'] = 'normal';
+            ['weight'] = 400;
+            ['assetId'] = getcustomasset(`{Path}.ttf`);
+        }}
+    })
+
+    writefile(`{Path}.json`, FontData);
 
     return Font.new(getcustomasset(`{Path}.json`), Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 end;
